@@ -4,8 +4,7 @@ import { ethers } from "hardhat";
 
 async function main() {
   const [owner, addr1 ] = await ethers.getSigners();
-  // const admin = [addr1.address, owner.address, "0x7fB674ABDe76C777B56cD362b8Fd16389254a342"];
-  console.log(addr1.address, owner.address);
+  // console.log(addr1.address, owner.address);
 
 
   const metaSwap = await ethers.getContractFactory("metaSwap");
@@ -13,14 +12,9 @@ async function main() {
   await metaSwap_.deployed();
 
   console.log(`Meta-swap contract is deployed to ${metaSwap_.address}`);
-  //console.log(addr1.address, owner.address);
-
-
 
  }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
